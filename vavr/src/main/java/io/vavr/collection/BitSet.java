@@ -953,6 +953,9 @@ interface BitSetModule {
             while (newlen > 0 && elements[newlen - 1] == 0) {
                 newlen--;
             }
+            if (newlen == elements.length) {
+                return elements;
+            }
             final long[] newelems = new long[newlen];
             System.arraycopy(elements, 0, newelems, 0, newlen);
             return newelems;
